@@ -13,7 +13,6 @@ Now you are ready to configure and use this tool.
 
 #### CONFIGURATION
 Copy the directory **`agent`** into the directory **`$IOTA_HOME/agent`**
-
 Make the shell scripts executable:
 ```
 cd $IOTA_HOME/agent
@@ -45,17 +44,19 @@ curl http://<your-node-ip>:8091/iri-build -H 'Content-Type: application/json' -d
 ```
 
 ### `file-exists`
-Check if build has finished
+Check if the IRI jar file could be created.
+This command can be used to check the existance of any file with a path relative to $IOTA_HOME
 Example with curl:
 ```
 curl -s http://<your-node-ip>:8091/file-exists -H 'Content-Type: application/json' -d '{"name": "'iri-1.1.3.2.jar'" }''
 ```
 
 ### `iri-start`
-Start IRI
+Start IRI.
+The argument 'startcmd' contains the complete Jave start command including all the options an program arguments.
 Example with curl:
 ```
-curl http://<-your-node-ip>:8091/iri-start -s -H 'Content-Type: application/json' -d '{"startcmd": "java -jar '$f2' -p 14700 --remote --headless -n '$f3' '$f4' '$f5' '$f6' '$f7' '$f8' '$f9' '$f10' '$f11' '$f12' '$f13' '$f14'"}'
+curl http://<-your-node-ip>:8091/iri-start -s -H 'Content-Type: application/json' -d '{"startcmd": "java -jar <iri-jar-file> -p 14700 --remote --headless -n 'udp://<neighbor-1-IP:14700 tcp://<neighbor-2-IP:15600'"}'
 ```
 
 ### `iri-stop`
