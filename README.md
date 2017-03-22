@@ -12,8 +12,16 @@ To install, clone this repo, open a terminal to the directory of the cloned repo
 Now you are ready to configure and use this tool.
 
 #### CONFIGURATION
+Copy the directory **`agent`** into the directory **`$IOTA_HOME/agent`**
 
 #### EXECUTION
+
+#### OPERATION
+
+The operations are accessed via HTTP REST calls.
+
+### `iri-build`
+
 
 ### CLIENT TOOLS
 
