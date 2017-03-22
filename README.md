@@ -105,33 +105,31 @@ curl http://<your-node-ip>:8091/download-from-server -s -H 'Content-Type: applic
 ```
 
 ### `spammer-start`
-Start the spammer
+Start the spammer.
 Example with curl:
 ```
+curl http://<your-node-ip>:8091/spammer-start
 ```
 
 ### `spammer-stop`
-Stop the spammer
+Stop the spammer.
 Example with curl:
 ```
+curl http://<your-node-ip>:8091/spammer-stop
 ```
 
 ### `value-spammer-start`
 Start the value spammer
 Example with curl:
 ```
+curl http://<your-node-ip>:8091/value-spammer-start
 ```
 
 ### `value-spammer-stop`
 Stop the value spammer
 Example with curl:
 ```
-```
-
-### `spammer-start`
-Start the spammer
-Example with curl:
-```
+curl http://<your-node-ip>:8091/value-spammer-stop
 ```
 
 ### `agent-replace`
