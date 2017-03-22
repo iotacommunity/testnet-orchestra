@@ -21,6 +21,7 @@ Add a line at the bottom that looks like this:
 * * * * *  /home/iota/IOTA/agent/agent-start.sh
 ```
 Crontab will try every minute to start the agent, unless the file **`/tmp/agent-exists.txt'** is found. That file is automatically created when the agent is started the 1st time after a reboot.
+
 #### OPERATION
 
 The operations are accessed via HTTP REST calls.
@@ -46,8 +47,75 @@ Example with curl:
 curl http://<-your-node-ip>:8091/iri-start -s -H 'Content-Type: application/json' -d '{"startcmd": "java -jar '$f2' -p 14700 --remote --headless -n '$f3' '$f4' '$f5' '$f6' '$f7' '$f8' '$f9' '$f10' '$f11' '$f12' '$f13' '$f14'"}'
 ```
 
+### `iri-stop`
+Stop IRI
+Example with curl:
+```
+```
+
+### `iri-clean`
+Delete the IRI database
+Example with curl:
+```
+```
+
+### `upload-to-server`
+Upload a file to the server.
+You can also uplaod a compresses archive (\*.tgz) and it will be extracted relative to $IOTA_HOME
+Example with curl:
+```
+```
+
+### `create-archive`
+Create a compressed tar archive of the given file or path
+Example with curl:
+```
+```
+
+### `download-from-server`
+Download the named file.
+Example with curl:
+```
+```
+
+### `spammer-start`
+Start the spammer
+Example with curl:
+```
+```
+
+### `spammer-stop`
+Stop the spammer
+Example with curl:
+```
+```
+
+### `value-spammer-start`
+Start the value spammer
+Example with curl:
+```
+```
+
+### `value-spammer-stop`
+Stop the value spammer
+Example with curl:
+```
+```
+
+### `spammer-start`
+Start the spammer
+Example with curl:
+```
+```
+
+### `agent-replace`
+Stop the agent and replace the agent.js file with a new version.
+Example with curl:
+```
+```
+
 ### CLIENT TOOLS
 
 #### CONFIGURATION
 
-#### EXECUTION
+#### OPERATION
