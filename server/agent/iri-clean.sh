@@ -7,5 +7,5 @@ pid=X$pid
 if [ "$pid" == "X" ]
 then
 rm -f *.iri
-rm -rf db-test-path
+rm -rf testnetdb
 fi
