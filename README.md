@@ -34,6 +34,7 @@ The operations are accessed via HTTP REST calls.
 IMPORTANT:  All these operations assume the the path to the IOTA runtime directory is set correctly in the file
 ```
 $IOTA_HOME/agent/
+```
 
 ### `iri-build`
 Get sources from Github and build them.
