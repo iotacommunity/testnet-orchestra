@@ -27,6 +27,11 @@ Add a line at the bottom that looks like this:
 ```
 Crontab will try every minute to start the agent, unless the file **`/tmp/agent-exists.txt'** is found. That file is automatically created when the agent is started the 1st time after a reboot.
 
+#### DISCLAIMER
+The access to this tools is open to the world if you don't protect port 8091 by firewall rules.
+Do not install these tools on a server where your Bitcoin wallet runs!
+
+
 #### OPERATION
 
 The operations are accessed via HTTP REST calls.
@@ -77,9 +82,10 @@ curl http://<your-node-ip>:8091/iri-clean
 
 ### `upload-to-server`
 Upload a file to the server.
-You can also uplaod a compresses archive (\*.tgz) and it will be extracted relative to $IOTA_HOME.
+You can upload a compressed tar archive (\*.tgz) and it will be extracted relative to $IOTA_HOME.
 Example with curl:
 ```
+
 ```
 
 ### `create-archive`
