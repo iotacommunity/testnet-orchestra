@@ -83,9 +83,10 @@ curl http://<your-node-ip>:8091/iri-clean
 ### `upload-to-server`
 Upload a file to the server.
 You can upload a compressed tar archive (\*.tgz) and it will be extracted relative to $IOTA_HOME.
+Note that the uri must be terminated with the / character!
 Example with curl:
 ```
-
+curl http://<your-node-ip>:8091/upload-to-server -s -H 'Content-Type: application/json' -d '{"uri": "http://testnet.iota.cool/", "archive": "testnetdb.tgz"}'
 ```
 
 ### `create-archive`
