@@ -65,13 +65,14 @@ Stop IRI.
 Because there may be several java processes running an the node, the name of the jar file has to be specified as an argument.
 Example with curl:
 ```
-curl http://$f1:8091/iri-stop -s -H 'Content-Type: application/json' -d '{"irijar": "iri-1.1.3.1.jar"}'
+curl http://<your-node-ip>:8091/iri-stop -s -H 'Content-Type: application/json' -d '{"irijar": "iri-1.1.3.2.jar"}'
 ```
 
 ### `iri-clean`
-Delete the IRI database
+Delete the IRI database files
 Example with curl:
 ```
+curl http://<your-node-ip>:8091/iri-clean
 ```
 
 ### `upload-to-server`
