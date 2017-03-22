@@ -57,13 +57,15 @@ Start IRI.
 The argument 'startcmd' contains the complete Jave start command including all the options an program arguments.
 Example with curl:
 ```
-curl http://<-your-node-ip>:8091/iri-start -s -H 'Content-Type: application/json' -d '{"startcmd": "java -jar <iri-jar-file> -p 14700 --remote --headless -n 'udp://<neighbor-1-IP:14700 tcp://<neighbor-2-IP:15600'"}'
+curl http://<-your-node-ip>:8091/iri-start -s -H 'Content-Type: application/json' -d '{"startcmd": "java -jar <iri-jar-file> -p 14700 --remote --headless -n 'udp://<neighbor-1-IP>:14700 tcp://<neighbor-2-IP>:15600'"}'
 ```
 
 ### `iri-stop`
-Stop IRI
+Stop IRI.
+Because there may be several java processes running an the node, the name of the jar file has to be specified as an argument.
 Example with curl:
 ```
+curl http://$f1:8091/iri-stop -s -H 'Content-Type: application/json' -d '{"irijar": "iri-1.1.3.1.jar"}'
 ```
 
 ### `iri-clean`
