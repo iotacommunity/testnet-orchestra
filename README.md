@@ -69,7 +69,7 @@ curl http://<your-node-ip>:8091/iri-stop -s -H 'Content-Type: application/json' 
 ```
 
 ### `iri-clean`
-Delete the IRI database files
+Delete the IRI database files.
 Example with curl:
 ```
 curl http://<your-node-ip>:8091/iri-clean
@@ -77,15 +77,17 @@ curl http://<your-node-ip>:8091/iri-clean
 
 ### `upload-to-server`
 Upload a file to the server.
-You can also uplaod a compresses archive (\*.tgz) and it will be extracted relative to $IOTA_HOME
+You can also uplaod a compresses archive (\*.tgz) and it will be extracted relative to $IOTA_HOME.
 Example with curl:
 ```
 ```
 
 ### `create-archive`
-Create a compressed tar archive of the given file or path
+Create a compressed tar archive of the given file or path.
+Again, the path or filename is relative to the $IOTA_HOME directory.
 Example with curl:
 ```
+curl http://<your-node-ip>:8091/create-archive -s -H 'Content-Type: application/json' -d '{"path": "iri.log"}'
 ```
 
 ### `download-from-server`
