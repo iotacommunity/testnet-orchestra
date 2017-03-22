@@ -31,12 +31,21 @@ Example with curl:
 ```
 curl http://<your-node-ip>:8091/iri-build -H 'Content-Type: application/json' -d '{"repo": "https://github.com/iotaledger/iri.git -b testnet-rocks"}'
 ```
+
 ### `file-exists`
 Check if build has finished
 Example with curl:
 ```
-curl -s http://$f1:8091/file-exists -H 'Content-Type: application/json' -d '{"name": "'$f2'" }''
+curl -s http://<your-node-ip>:8091/file-exists -H 'Content-Type: application/json' -d '{"name": "'iri-1.1.3.2.jar'" }''
 ```
+
+### `iri-start`
+Start IRI
+Example with curl:
+```
+curl http://<-your-node-ip>:8091/iri-start -s -H 'Content-Type: application/json' -d '{"startcmd": "java -jar '$f2' -p 14700 --remote --headless -n '$f3' '$f4' '$f5' '$f6' '$f7' '$f8' '$f9' '$f10' '$f11' '$f12' '$f13' '$f14'"}'
+```
+
 ### CLIENT TOOLS
 
 #### CONFIGURATION
