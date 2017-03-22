@@ -14,6 +14,12 @@ Now you are ready to configure and use this tool.
 #### CONFIGURATION
 Copy the directory **`agent`** into the directory **`$IOTA_HOME/agent`**
 
+Make the shell scripts executable:
+```
+cd $IOTA_HOME/agent
+chmod 700 *.sh
+```
+
 Make a crontab entry so that the agent webserver is started in the background and also on reboot of the system:
 Execute the command **`crontab -e`**
 Add a line at the bottom that looks like this:
@@ -26,8 +32,13 @@ Crontab will try every minute to start the agent, unless the file **`/tmp/agent-
 
 The operations are accessed via HTTP REST calls.
 
+IMPORTANT:  All these operations assume the the path to the IOTA runtime directory is set correctly in the file
+```
+$IOTA_HOME/agent/
+
 ### `iri-build`
 Get sources from Github and build them.
+The URL of the repo and, if applicable, the branch must be specified in the json POST content.
 Example with curl:
 ```
 curl http://<your-node-ip>:8091/iri-build -H 'Content-Type: application/json' -d '{"repo": "https://github.com/iotaledger/iri.git -b testnet-rocks"}'
