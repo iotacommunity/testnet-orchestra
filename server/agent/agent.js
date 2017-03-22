@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const fs    = require('fs');
 const dateFormat = require('dateformat');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -7,6 +8,9 @@ const exec = require('child_process').exec;
 const app = express();
 
 var port = 8091;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
   res.send('OK');
@@ -27,24 +31,25 @@ app.get('/iri-clean', function (req, res) {
   res.send('OK');
 });
 
-app.get('/iri-start', function (req, res) {
-  var startcmd = req.query.startcmd;
+app.post('/iri-start', function (req, res) {
+  var startcmd = req.body.startcmd;
   var cmd = './iri-start.sh "'+startcmd+'"'; 
   exec(cmd, function(error, stdout, stderr) {
   }); 
   res.send('OK');
 });
 
-app.get('/iri-build', function (req, res) {
-  var repo = req.query.repo
+app.post('/iri-build', function (req, res) {
+  var repo = req.body.repo
   var cmd ='./iri-build.sh \"'+repo+'\"';
+console.log(repo);
   exec(cmd, function(error, stdout, stderr) {
   }); 
   res.send('OK');
 });
 
-app.get('/file-exists', function (req, res) {
-  var filename = req.query.name;
+app.post('/file-exists', function (req, res) {
+  var filename = req.body.name;
   if (fs.existsSync('../'+filename)) {
     res.send("OK");
   }
