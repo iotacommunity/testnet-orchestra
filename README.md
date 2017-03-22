@@ -26,7 +26,10 @@ Crontab will try every minute to start the agent, unless the file **`/tmp/agent-
 The operations are accessed via HTTP REST calls.
 
 ### `iri-build`
-
+```
+Example with curl:
+curl http://<your-node-ip>:8091/iri-build -H 'Content-Type: application/json' -d '{"repo": "https://github.com/iotaledger/iri.git -b testnet-rocks"}'
+```
 
 ### CLIENT TOOLS
 
