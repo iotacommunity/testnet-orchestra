@@ -14,8 +14,13 @@ Now you are ready to configure and use this tool.
 #### CONFIGURATION
 Copy the directory **`agent`** into the directory **`$IOTA_HOME/agent`**
 
-#### EXECUTION
-
+Make a crontab entry so that the agent webserver is started in the background and also on reboot of the system:
+Execute the command **`crontab -e`**
+Add a line at the bottom that looks like this:
+...
+* * * * *  /home/iota/IOTA/agent/agent-start.sh
+...
+Crontab will try every minute to start the agent, unless the file **`/tmp/agent-exists.txt'** is found. That file is automatically created when the agent is started the 1st time after a reboot.
 #### OPERATION
 
 The operations are accessed via HTTP REST calls.
